@@ -8,12 +8,14 @@ import { Wrapper as PopperWrapper } from '~/components/Layout/Popper';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import AccountItem from '~/components/AccountItem';
+
+import Button from '~/components/Button';
 const cx = classNames.bind(styles);
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
   useEffect(() => {
     setTimeout(() => {
-      setSearchResult([1, 2, 3]);
+      setSearchResult([]);
     }, 0);
   }, []);
   return (
@@ -49,7 +51,17 @@ function Header() {
             </button>
           </div>
         </Tippy>
-        <div className={cx('action')}>action</div>
+        <div className={cx('action')}>
+          <Button text_type>Upload</Button>
+          <Button
+            primary
+            onClick={() => {
+              alert('click!');
+            }}
+          >
+            Log in
+          </Button>
+        </div>
       </div>
     </header>
   );
