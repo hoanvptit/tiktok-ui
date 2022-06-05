@@ -1,0 +1,20 @@
+//Menu
+.item-list {
+  width: 224px;
+
+  .menu-item {
+    margin-left: 0px;
+  }
+}
+
+.menu-popper {
+  padding-bottom: 8px;
+}
+.menu-item {
+  width: 100%;
+  justify-content: left;
+  border-radius: 0;
+  &:hover {
+    background-color: rgba(22, 35, 24, 0.05);
+  }
+}
