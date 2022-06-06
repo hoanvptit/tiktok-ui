@@ -26,6 +26,19 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -37,6 +50,10 @@ const MENU_ITEMS = [
     title: 'Keyboard shortcuts',
   },
 ];
+//handle logic
+const handleMenuChange = (item) => {
+  console.log(item);
+};
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
   useEffect(() => {
@@ -87,7 +104,7 @@ function Header() {
           >
             Log in
           </Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>

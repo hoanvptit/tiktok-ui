@@ -12,9 +12,29 @@
 }
 .menu-item {
   width: 100%;
+  line-height: 1.8rem;
+  padding: 11px 16px;
   justify-content: left;
   border-radius: 0;
   &:hover {
     background-color: rgba(22, 35, 24, 0.05);
   }
+}
+//Header Menu
+.header {
+  position: relative;
+  height: 50px;
+  margin-top: -8px;
+}
+.back-btn {
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
