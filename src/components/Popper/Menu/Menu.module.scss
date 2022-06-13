@@ -16,6 +16,10 @@
   padding: 11px 16px;
   justify-content: left;
   border-radius: 0;
+
+  &.separate {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+  }
   &:hover {
     background-color: rgba(22, 35, 24, 0.05);
   }
