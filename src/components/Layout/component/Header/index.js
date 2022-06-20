@@ -6,13 +6,11 @@ import {
   faEarthAsia,
   faEllipsisVertical,
   faKeyboard,
-  faMagnifyingGlass,
   faSpinner,
   faUser,
   faCoins,
   faGear,
   faSignOut,
-  faCloudUpload,
 } from '@fortawesome/free-solid-svg-icons';
 import images from '~/assets/images';
 import Tippy from '@tippyjs/react';
@@ -27,6 +25,8 @@ import AccountItem from '~/components/AccountItem';
 
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { SearchIcon, UploadIcon } from '~/components/icons';
+import Image from '~/components/images';
 
 const cx = classNames.bind(styles);
 
@@ -124,7 +124,8 @@ function Header() {
             <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
             <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -133,7 +134,8 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
+                  <UploadIcon className={cx('uploadIcon')} />
                 </button>
               </Tippy>
             </>
@@ -146,9 +148,9 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
+                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                 className={cx('user-avatar')}
-                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/1c9388305beeb29e3a92daf9ed39c582.jpeg?x-expires=1655308800&x-signature=QmFNtA%2Bg36Nrroj%2BL%2FtBlwjhELI%3D"
                 alt="Nguyen Van Hoa"
               />
             ) : (
