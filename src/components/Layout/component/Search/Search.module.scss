@@ -45,6 +45,7 @@
     border-color: rgba(22, 24, 35, 0.2);
   }
 }
+
 .loading,
 .clear {
   border: none;
@@ -54,6 +55,17 @@
   right: calc(var(--search-btn-width) + 16px);
   top: 50%;
   transform: translateY(-50%);
+}
+.loading {
+  animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .search-btn {
