@@ -1,15 +1,17 @@
+import routeConfig from '~/config/routes';
+
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import { HeaderOnly } from '~/components/Layout';
 
-// không cần đăng nhập mới vào đc
+// không cần đăng nhập vẫn vào đc
 const publicRoutes = [
-  { path: '/', component: Home },
-  { path: '/following', component: Following },
-  { path: '/@:nickname', component: Profile },
-  { path: '/upload', component: Upload, layout: HeaderOnly },
+  { path: routeConfig.home, component: Home },
+  { path: routeConfig.following, component: Following },
+  { path: routeConfig.profile, component: Profile },
+  { path: routeConfig.upload, component: Upload, layout: HeaderOnly },
 ];
 
 //cần đăng nhập
