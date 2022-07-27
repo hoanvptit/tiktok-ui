@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+// wait to done input then search
 function useDebounce(value, delay) {
   const [debounceValue, setDebounceValue] = useState(value);
   useEffect(() => {

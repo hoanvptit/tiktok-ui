@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
 import { useDebounce } from '~/hooks';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
-import * as searchService from '~/apiService/searchService';
+import * as searchService from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/icons';
@@ -21,22 +20,22 @@ function Search() {
 
   const inputRef = useRef();
 
-  const debounce = useDebounce(searchValue, 500);
+  const debounceValue = useDebounce(searchValue, 500);
 
   useEffect(() => {
-    if (!debounce.trim()) {
+    if (!debounceValue.trim()) {
       setSearchResult([]);
       return;
     }
 
     const fetchApi = async () => {
       setLoading(true);
-      const result = await searchService.search(debounce);
+      const result = await searchService.search(debounceValue);
       setSearchResult(result);
       setLoading(false);
     };
     fetchApi();
-  }, [debounce]);
+  }, [debounceValue]);
 
   const handleChange = (e) => {
     const searchStr = e.target.value;
